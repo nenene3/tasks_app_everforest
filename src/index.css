@@ -1,0 +1,66 @@
+@import "tailwindcss";
+/* @import './App.css'; */
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    /* Background colors */
+    --color-bg-dim: #232A2E;
+    --color-bg0: #2D353B;
+    --color-bg1: #343F44;
+    --color-bg2: #3D484D;
+    --color-bg3: #475258;
+    --color-bg4: #4F585E;
+    --color-bg5: #56635F;
+  
+    /* Contextual backgrounds */
+    --color-bg-red: #543A48;
+    --color-bg-visual: #514045;
+    --color-bg-yellow: #4D4C43;
+    --color-bg-green: #425047;
+    --color-bg-blue: #3A515D;
+  
+    /* Foreground and status line colors */
+    --color-fg: #D3C6AA;
+    --color-statusline1: #A7C080;
+    --color-statusline2: #D3C6AA;
+    --color-statusline3: #E67E80;
+  
+    /* Accent colors */
+    --color-red: #E67E80;
+    --color-orange: #E69875;
+    --color-yellow: #DBBC7F;
+    --color-green: #A7C080;
+    --color-blue: #7FBBB3;
+    --color-aqua: #83C092;
+    --color-purple: #D699B6;
+  
+    /* Neutral grays */
+    --color-gray0: #7A8478;
+    --color-gray1: #859289;
+    --color-gray2: #9DA9A0;
+  }
+  
+
+@layer base {
+    body{
+        @apply bg-bg0 text-fg;
+        
+        @variant dark{
+            @apply bg-black
+        }
+    }
+
+    
+}
+
+
+@layer components{
+    .card{
+        @apply bg-white shadow-md rounded max-w-sm;
+
+        @variant dark{
+            @apply bg-black
+        }
+    }
+}
