@@ -1,11 +1,14 @@
-import React, { ReactNode } from "react";
+import React, { ComponentPropsWithoutRef, ElementType, ReactNode } from "react";
 
-type Props = {
+type Props<T extends ElementType> = {
+  as?: T;
   children: ReactNode;
-};
+  className?: string;
+} & ComponentPropsWithoutRef<T>;
 
-const Card = ({ children }: Props) => {
-  return <div className="card">{children}</div>;
-};
+function Card<C extends ElementType>({ children, as, className }: Props<C>) {
+  const Component = as || "div";
+  return <Component className={`${className} card`}>{children}</Component>;
+}
 
 export default Card;

@@ -9,9 +9,8 @@ type Props = {
 const Task = ({task}: Props) => {
   return (
     <Card>
-        {task.title}
-        <br/>
-        {task.content}
+        <h2>{task.title}</h2>
+        <p>{task.content}</p>
     </Card>
   )
 }

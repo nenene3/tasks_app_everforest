@@ -45,10 +45,6 @@
 @layer base {
     body{
         @apply bg-bg0 text-fg;
-        
-        @variant dark{
-            @apply bg-black
-        }
     }
 
     
@@ -57,10 +53,10 @@
 
 @layer components{
     .card{
-        @apply bg-white shadow-md rounded max-w-sm;
-
-        @variant dark{
-            @apply bg-black
-        }
+        @apply bg-bg-dim shadow-md rounded max-w-sm;
+    }
+    .card::after{
+        
+        content: "remember this";
     }
 }

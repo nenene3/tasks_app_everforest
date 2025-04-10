@@ -1,24 +1,29 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
 type Props = {
-  label: string;
+  label?: string;
   id: string;
+  icon?:ReactNode
 } & React.ComponentPropsWithRef<"input">;
 
-const Input = ({ id, label, ref, className, ...props }: Props) => {
+
+
+
+const Input = ({ id, label, ref, className,icon, ...props }: Props) => {
   return (
-    <p className="flex flex-col gap-2">
-      <label htmlFor={id}>{label}</label>
-      <div>
+    <div className="flex flex-col">
+      {label && <label htmlFor={id}>{label}</label>}
+      <div className={`flex gap-2 bg-bg-dim w-full p-2 group  transition duration-200 outline-none rounded-md focus-within:ring-4 focus-within:ring-green ${className}`}>
+        {icon}
         <input
           id={id}
           name={id}
           {...props}
           ref={ref}
-          className={`bg-bg-dim w-full  text-fg p-2  outline-none rounded-md focus:ring-4 focus:ring-green ${className} `}
+          className={`bg-transparent outline-none w-full`}
         />
       </div>
-    </p>
+    </div>
   );
 };
 
