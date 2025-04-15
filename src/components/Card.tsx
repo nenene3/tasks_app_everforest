@@ -8,7 +8,7 @@ type Props<T extends ElementType> = {
 
 function Card<C extends ElementType>({ children, as, className }: Props<C>) {
   const Component = as || "div";
-  return <Component className={`${className} card`}>{children}</Component>;
+  return <Component className={`${className || ''} card`}>{children}</Component>;
 }
 
 export default Card;

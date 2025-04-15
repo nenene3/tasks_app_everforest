@@ -1,0 +1,11 @@
+@reference "../../index.css";
+
+
+
+@layer components {
+    .actionBtn{
+        /* background-color:var(--color-bg-dim) */
+        @apply text-6xl bg-bg0 hover:bg-bg3 rounded-md ;
+
+    }
+}

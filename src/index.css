@@ -3,7 +3,7 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-@theme {
+@theme static{
     /* Background colors */
     --color-bg-dim: #232A2E;
     --color-bg0: #2D353B;
@@ -44,7 +44,7 @@
 
 @layer base {
     body{
-        @apply bg-bg0 text-fg;
+        @apply bg-bg0 text-fg font-mono;
     }
 
     
@@ -53,10 +53,12 @@
 
 @layer components{
     .card{
-        @apply bg-bg-dim shadow-md rounded max-w-sm;
+        @apply bg-bg-dim shadow-md rounded ;
     }
-    .card::after{
-        
-        content: "remember this";
+    .copyButton{
+        background-color: var(--color-bg0);
+        border-radius: 0.25rem;
+        border: 30px teal 
     }
+    
 }
